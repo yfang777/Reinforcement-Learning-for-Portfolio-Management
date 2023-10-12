@@ -1,52 +1,31 @@
-## Package Needed
-numpy
+# Reinforcement Learning for portfolio management
 
-pandas>=1.1.5
+The project aims to implement commom Reinforcement Learning on portfolio management task.
+Done by Yuan Fang, Advised by Hua Cheng
 
-stockstats
+Agent: A2C, DDPG, PPO, TD3, SAC
+Market: SZ50
+Train_set: 2008.1.5 - 2018.12
+Test Set: 2019.1 - 2020.12
 
-pyfolio
+### Quick Start
 
-matplotlib
+```
+conda create -n=RLportfolio python=3.8
+pip install python 
 
-gym>=0.17
+python agent_train.py \
+	--model_type="PPO_improve" \
+	--max_train_steps=100000 \
+	--update-interval=100 \
 
-stable-baselines3
+```
 
 
-## 训练
 
-环境文件：*env.py*
+### Result
 
-默认参数文件：*config.py*
+![1697080568749](image/README/1697080568749.png)
 
-通过stable_baselines3训练单个模型：*train_single.py*
 
-自行修改参数，可训练模型有DDPG、PPO、TD3、SAC、A2C
-
-训练全部模型：*train_all.ipynb*
-
-## 测试
-
-run *backtest.ipynb*
-
-## 自建算法
-
-*attention_ppo文件夹*：用于存放引入attention机制后PPO已训练模型
-
-*ppo文件夹*：存放自建PPO的已训练模型
-
-*PPO.py*: 自建的teamPPO算法
-
-*PPO_train.ipynb*：用于训练自建PPO以及AttentionPPO
-
-*Attention_PPO.py*：引入attention机制的PPO
-
-## 其余文件
-
-*backtest文件夹*：用于存储不同算法下的账户与动作信息
-
-*data_file文件夹*：存储train set 以及 test set
-
-*train_file文件夹*：用于存储训练好的模型
-
+![1697080590035](image/README/1697080590035.png)![1697080597794](image/README/1697080597794.png)

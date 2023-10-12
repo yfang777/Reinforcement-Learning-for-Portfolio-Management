@@ -7,10 +7,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.distributions import Beta, Normal
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print('devic:', device)
-
-
 class BetaActor(nn.Module):
     def __init__(self, state_dim, action_dim, net_width):
         super(BetaActor, self).__init__()
@@ -120,12 +116,13 @@ class Critic(nn.Module):
         return v
 
 
-class Attention_PPO(object):
+class PPO_improve(object):
     def __init__(
             self,
             state_dim,
             action_dim,
             env_with_Dead,
+            device="cuda",
             gamma=0.99,
             lambd=0.95,
             clip_rate=0.2,

@@ -2,6 +2,12 @@ Start_Trade_Date = "2009-01-01"
 End_Trade_Date = "2019-01-01"
 End_Test_Date = "2021-01-01"
 
+kwargs = {
+    "state_dim": 801,
+    "action_dim": 50,
+    "env_with_Dead": True
+}
+
 # 技术指标列表
 TECHNICAL_INDICATORS_LIST = [
     "boll_ub", "boll_lb", "rsi_20", "close_20_sma", "close_60_sma", "close_120_sma", \
@@ -67,3 +73,5 @@ SAC_PARAMS = {
     "learning_starts": 2000,
     "ent_coef": "auto_0.1"
 }
+
+
